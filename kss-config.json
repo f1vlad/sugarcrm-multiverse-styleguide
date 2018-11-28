@@ -1,0 +1,16 @@
+{
+    "title": "SugarCRM Multiverse Styleguide",
+    "source": [
+        "less"
+    ],
+    "destination": "styleguide/",
+    "mask": "*.less",
+    "homepage": "index.md",
+    "css": [
+        "../src/config.css"
+    ],
+    "js": [
+        "../src/styleguide.js"
+    ],
+    "verbose": true
+}

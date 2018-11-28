@@ -1,27 +1,25 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
 const exec = require('child_process').exec;
+const uglify = require('gulp-uglify'); // to be used on src/styleguide.js
+const uglifycss = require('gulp-uglifycss');
+
 const kssGenerate = `kss --config kss-config.json`;
 
 gulp.task('default', ['build:kss', 'build:css']);
 
-/* Generate CSS files to support UI representation of static styleguide */ 
+/* Generate CSS to support UI representation of static styleguide */
+// TODO rename config.css to styleguide.css or something more meaningful
 gulp.task('build:css', () => {
     gulp.src('less/config.less')
     .pipe(less())
+    .pipe(uglifycss())
     .pipe(gulp.dest('src'));
-
-    // TODO rename config.css to styleguide.css
-    // or something more meaningful
 });
 
 /* Generate static styleguide based on KSS style comments in less files */
-gulp.task('build:kss', function (v) {
-    exec(kssGenerate, function (err, stdout, stderr) {
-      console.log(stdout);
-      console.log(stderr);
-      v(err);
-    });
+// TODO use gulp-kss generate kss instead of exec()
+gulp.task('build:kss', () => exec(kssGenerate));
 
-    // TODO use gulp-kss generate kss instead of exec()
-  })
+/* Watching for less changing and automatically rebuilding */
+gulp.task('watch', () => gulp.watch('less/**/*.less', ['build:css', 'build:kss']))

@@ -9,6 +9,8 @@
   "author": "https://github.com/f1vlad",
   "license": "ISC",
   "devDependencies": {
-    "gulp-less": "^4.0.1"
+    "gulp-less": "^4.0.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifycss": "^1.1.0"
   }
 }

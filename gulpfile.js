@@ -17,6 +17,9 @@ gulp.task('build:css', () => {
     .pipe(gulp.dest('src'));
 });
 
+// TODO files in `src` dir don't really make sense they should be
+//      moved to `dist` after build:kss task is finished
+
 /* Generate static styleguide based on KSS style comments in less files */
 // TODO use gulp-kss generate kss instead of exec()
 gulp.task('build:kss', () => exec(kssGenerate));

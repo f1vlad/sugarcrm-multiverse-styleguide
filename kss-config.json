@@ -3,7 +3,7 @@
     "source": [
         "less"
     ],
-    "destination": "styleguide/",
+    "destination": "dist/",
     "mask": "*.less",
     "homepage": "index.md",
     "css": [

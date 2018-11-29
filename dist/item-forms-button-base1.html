@@ -27,13 +27,8 @@
         </a>
       </li>
       <li class="kss-nav__menu-item">
-        <a class="kss-nav__menu-link" href="section-button.html">
-          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Button</span>
-        </a>
-      </li>
-      <li class="kss-nav__menu-item">
         <a class="kss-nav__menu-link" href="section-forms.html">
-          <span class="kss-nav__ref">2</span><span class="kss-nav__name">Forms</span>
+          <span class="kss-nav__ref">1</span><span class="kss-nav__name">Forms</span>
         </a>
       </li>
     </ul>
@@ -42,23 +37,23 @@
 <main class="kss-main" aria-label="Content">
   <article>
 
-    <div id="kssref-button-primaryset" class="kss-section kss-section--depth-2 is-fullscreen">
+    <div id="kssref-forms-button-base1" class="kss-section kss-section--depth-3 is-fullscreen">
 
       <div class="kss-style">
-        <h2 class="kss-title kss-title--level-2">
-          <a class="kss-title__permalink" href="#kssref-button-primaryset">
+        <h3 class="kss-title kss-title--level-3">
+          <a class="kss-title__permalink" href="#kssref-forms-button-base1">
             <span class="kss-title__ref">
-              1.5
+              1.2.1
               <span class="kss-title__permalink-hash">
-                  #Button.PrimarySet
+                  #Forms.Button.Base1
               </span>
             </span>
-            Button
+            Base Button
           </a>
-        </h2>
+        </h3>
 
           <p class="kss-toolbar">
-            <a href="#kssref-button-primaryset" data-kss-guides="true">
+            <a href="#kssref-forms-button-base1" data-kss-guides="true">
               <span class="kss-toolbar__tooltip">Toggle example guides</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <rect class="kss-toolbar__icon-fill" x="5" y="35" width="5" height="9"/>
@@ -79,7 +74,7 @@
                 <rect class="kss-toolbar__icon-fill" x="20" y="54" width="9" height="5"/>
               </svg>
             </a>
-            <a href="#kssref-button-primaryset" data-kss-markup="true">
+            <a href="#kssref-forms-button-base1" data-kss-markup="true">
               <span class="kss-toolbar__tooltip">Toggle HTML markup</span>
               <svg focusable="false" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 64 64">
                 <path class="kss-toolbar__icon-fill" d="M37.555,46.239l6.103,6.103l20.342,-20.342l-20.342,-20.342l-6.103,6.103l14.24,14.239l-14.24,14.239Z"/>
@@ -89,25 +84,9 @@
           </p>
 
           <div class="kss-description">
-            <p>Your standard button suitable for clicking.</p>
-<p>:hover    - Highlights when hovering.
-:disabled - Dims the button when disabled.
-.primary  - Indicates button is the primary action.
-.smaller  - A little bit smaller now.</p>
-<pre class="hljs"><code class="language-">.button {
-  //
-  &amp;.primary {
-    //
-  }
-  &amp;.smaller {
-    //
-  }
-  &amp;:hover {
-    //
-  }
-  &amp;:disabled {
-    //
-  }
+            <p>Description</p>
+<pre class="hljs"><code class="language-">.YOUR_SELECTOR_BASE {
+  .btn();
 }
 </code></pre>
 
@@ -123,7 +102,8 @@
 
 
           <div class="kss-modifier__example">
-            <button class="button ">Button</button>
+            <ELEMENT class="YOUR_SELECTOR_BASE">Label</ELEMENT>
+
             <div class="kss-modifier__example-footer"></div>
           </div>
 
@@ -131,13 +111,14 @@
 
           <details class="kss-markup kss-style">
             <summary>
-                Markup
+                Markup: <code>components/button-base.hbs</code>
             </summary>
-            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"button "</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span></code></pre>
+            <pre class="hljs"><code class="language-handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ELEMENT</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"YOUR_SELECTOR_BASE"</span>&gt;</span>Label<span class="hljs-tag">&lt;/<span class="hljs-name">ELEMENT</span>&gt;</span>
+</span></code></pre>
           </details>
 
         <div class="kss-source kss-style">
-          Source: <code>components/button.less</code>, line 144
+          Source: <code>components/button.less</code>, line 1
         </div>
 
     </div>

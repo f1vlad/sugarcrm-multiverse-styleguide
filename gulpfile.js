@@ -25,4 +25,4 @@ gulp.task('build:css', () => {
 gulp.task('build:kss', () => exec(kssGenerate));
 
 /* Watching for less changing and automatically rebuilding */
-gulp.task('watch', () => gulp.watch('less/**/*.less', ['build:css', 'build:kss']))
+gulp.task('watch', () => gulp.watch(['less/**/*.less'], ['build:css', 'build:kss']))

@@ -1,1 +1,54 @@
-@red: #FF0000;
+// Buttons
+@btnBackground: @grayLighter;
+@btnBackgroundHighlight: @grayLighter;
+@btnBorder: darken(@grayLighter, 10%);
+
+@btnPrimaryBackground: @PrimaryButton;
+@btnPrimaryBackgroundHighlight: @PrimaryButton;
+
+@btnSecondaryBackground: #f2f5f9;
+@btnSecondaryBorder: #d3dbe1;
+@btnSecondaryColor: @linkColor;
+@btnSecondaryBackgroundHover: #f2f5f9;
+@btnSecondaryBackgroundActive: #e0e8ed;
+@btnSecondaryBoxShadowActive: inset 0 1px 3px 0 rgba(1, 21, 35, 0.1);
+@btnSecondaryBackgroundFocus: @white;
+@btnSecondaryBackgroundDisabled: #f8fafd;
+@btnSecondaryColorDisabled: rgba(6, 121, 200, 0.3);
+
+// Links
+@linkColor: @PrimaryButton;
+@linkColorHover: darken(@linkColor, 10%);
+@linkMore: @PrimaryButton;
+
+// Core theme variables
+@BorderColor: #d3dbe1;// 3 pixel line on the navbar
+@NavigationBar: #fff;// color of the navbar
+@PrimaryButton: #0679c8;
+
+// Typography
+@sansFontFamily: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+@serifFontFamily: Georgia, "Times New Roman", Times, serif;
+@monoFontFamily: Menlo, Monaco, Consolas, "Courier New", monospace;
+@baseFontSize: 12px;
+@baseFontFamily: @sansFontFamily;
+@baseLineHeight: 18px;
+@altFontFamily: @serifFontFamily;
+@headingsFontFamily: inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight: bold; // instead of browser default, bold
+@headingsColor: inherit; // empty to use BS default, @textColor
+
+
+// Component sizing
+@fontSizeHeader: @baseFontSize + 3px; // 15px
+@fontSizeLarge: @baseFontSize + 3px; // 15px
+@fontSizeMedium: @baseFontSize + 1px; // 13px
+@fontSizeSmall: @baseFontSize - 1px; // 11px
+@fontSizeMini: @baseFontSize - 2px; // 10px
+@paddingLarge: 9px 14px; // 44px
+@paddingSmall: 5px 9px; // 26px
+@paddingMini: 2px 6px; // 24px
+@baseBorderRadius: 3px;
+@borderRadiusLarge: 6px;
+@borderRadiusSmall: 2px;
+@borderRadiusMini: 2px;

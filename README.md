@@ -1,17 +1,17 @@
-USAGE
+## USAGE
 
-Generate static styleguide
+### Generate static styleguide
 (prerequisite: npm install -g kss)
 gulp OR gulp build:kss OR kss --config kss-config.json
 
-List of options
+### List of options
 kss --help
 
-Full reference
+### Full reference
 https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide
 
-KSS markup
+### KSS markup
 https://github.com/kss-node/kss/blob/spec/SPEC.md
 
-Demo project
+### Demo project
 https://github.com/kss-node/kss-node/tree/master/demo

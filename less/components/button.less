@@ -40,10 +40,6 @@
   .button-primary();
 }
 
-.YOUR_SELECTOR_BASE {
-  .button-base();
-}
-
 // Secondary Button
 //
 // Description
@@ -108,9 +104,13 @@
   border-style: solid;
   border-radius: @baseBorderRadius;
   color: @black;
+
+  // &:extend(.YOUR_SELECTOR_PRIMARY);
 }
 
 .button-primary() {
+  /// todo add button-base here
+
   background: @btnPrimaryBackground;
   color: @white;
 }

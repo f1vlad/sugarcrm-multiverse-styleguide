@@ -2,7 +2,7 @@
 
 ### Generate static styleguide
 (prerequisite: npm install -g kss)
-gulp OR gulp build:kss OR kss --config kss-config.json
+gulp OR gulp build:kss OR npm run-script build:kss
 
 ### List of options
 kss --help

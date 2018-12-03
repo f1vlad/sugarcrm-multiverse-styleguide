@@ -4,6 +4,7 @@
   "description": "USAGE",
   "main": "index.js",
   "scripts": {
+    "build:kss": "kss --config kss-config.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "https://github.com/f1vlad",

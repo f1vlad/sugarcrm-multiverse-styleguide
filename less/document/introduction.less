@@ -1,0 +1,159 @@
+// Using styleguide
+//
+// All required files are loaded from a private npm repo. In order to install it from there, npm needs to know the location of private repo. If your project is located at `multiverse/../myApp`, create file `multiverse/../myApp/.npmrc` with content:
+//
+// ```
+// registry=https://cache.sugardev.team/repository/npm/
+// ```
+// Update your package json by running the following command:
+//
+// ```
+// npm install sugarcrm-multiverse-styleguide
+// ```
+//
+// Look at `projects/playground/mfe_template_js` project to see how styleguide is consumed.
+//
+// Weight: 1
+//
+// Styleguide Introduction.Using
+
+// Importing in LESS
+//
+// Import styleguide into your project LESS File:
+//
+// ```
+// @import (reference) "~sugarcrm-multiverse-styleguide/less/config.less";
+//
+// .loginBtn {
+//     .button-primary();
+// }
+//
+// .logoutBtn {
+//     .button-warning();
+// }
+// ```
+// Note that path to node_modules "~" is being resolved via another module that should be installed: less-loader. For more information and usage see: <a href="https://www.npmjs.com/package/less-loader#webpack-resolver">webpack-resolver</a>.
+//
+// Weight: 2
+//
+// Styleguide Introduction.UsingCss
+
+// Upgrading styleguide
+//
+// Project can be configured to upgrade styleguide automatically or manually. Semantic versioning is used, see examples on what happens when `npm install` is run with the following four different settings in `package.json`:
+//
+// ```
+// "sugarcrm-multiverse-styleguide": "*",      // will automatically upgrade to latest
+// "sugarcrm-multiverse-styleguide": "^1.0.0", // will automatically upgrade to a new minor feature release
+// "sugarcrm-multiverse-styleguide": "~1.0.0", // will automatically upgrade to a new patch/bug release
+// "sugarcrm-multiverse-styleguide": "1.0.0",  // will not upgrade at all
+// ```
+//
+// Weight: 4
+//
+// Styleguide Introduction.Upgrading
+
+// Contributing to styleguide
+//
+// The following is example on how to write documentation:
+//
+// ```
+// // Basic button
+// //
+// // This is styling of a <i>basic</i> button, mockup: <img src="mockup.png">
+// //
+// // Markup: mybutton.hbs
+// //
+// // ```
+// // .myButton {
+// //   .primary-button();
+// // }
+// // ```
+// //
+// // democssclasses: true
+// //
+// // cssclasses:
+// // .myButton {
+// //   .primary-button();
+// // }
+// //
+// // .primary-button() {
+// //   background: black;
+// //   color: white;
+// //   &:hover {
+// //     background: gray;
+// //   }
+// // }
+// //
+// // Weight: 1
+// //
+// // Styleguide SomeSection.MyButton
+// ```
+//
+// In this example we're documenting styling of a basic button appearance. So our documentation consists of a tiile and description.
+// Description can contain some HTML tags as shown in the example.
+//
+// Next is markup where we show a demo. Markup can be either in an hbs file or right in the documentation like this:
+//
+// ```
+// // Markup:
+// // <button class="myButton"></button>
+// ```
+//
+// Next we show the css code for our button that consumes button mixin.
+//
+// Next we want to demo this button in our styleguide documentation: `democlasses: true` followed by `cssclasses: ...` where consume
+// mixin in our demo code. Demo classes are living strictly in styleguide documentation, they are built separately than main css
+// output file. <span style="color: red">Note:</span> there can be no empty lines under `cssclasses: ...`.
+//
+// Finally, we specify `Weight: 1` which sorts documentation pieces under the category, and `Styleguide SomeSection.MyButton` which
+// puts this documentation piece under "SomeSection" category.
+//
+// If some documentation specific styling is required, file `src/styleguide-doc-frontend/kss.less` should be used.
+//
+// It is also possible to make these demo components interactive, file `src/styleguide-doc-frontend/styleguide.js` should be used.
+//
+// For more information see KSS-specific stuff, see <a href="https://github.com/kss-node/kss/blob/spec/SPEC.md">KSS markup</a>
+// and <a href="https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide">Quick Start Guide</a>.
+//
+// Weight: 5
+//
+// Styleguide Introduction.Contributing
+
+// Making a new release
+//
+// After styleguide has been updated, it should be released to private Sugar npm repository, known as "Nexus" (<a href="https://cache.sugardev.team/#browse/search=keyword%3Dstyleguide">https://cache.sugardev.team/#browse/search=keyword%3Dstyleguide</a>).
+//
+// Prerequisite:
+// * `npm login --registry=https://cache.sugardev.team/repository/npm-sugar/`
+// * username: admin
+// * password: ********* (EA team is a password keeper)
+// * email: YOUR_USERNAME@sugarcrm.com
+// * edit `package.json` to update styleguide version
+//
+// Releasing via bazel:
+// * <span style="  text-decoration: line-through;">`bazel run projects/stylelguide:npm.publish`</span> -- Note: until further notice, this method <strong><span style="color: red">should not</span></strong>
+// be used because it corrupts woff files (<a href="https://sugarcrm.atlassian.net/browse/MF-119">MF-119</a>).
+//
+// Releasing via `npm publish`
+// * create a new folder `PACKAGE` on your hard drive
+// * copy the following components to `PACKAGE`:
+// ```
+// ├── assets
+// ├── less
+// │   ├── config.less
+// │   ├── documented-components
+// │   ├── undocumented-components
+// ├── lib
+// ├── npm.js
+// └── package.json
+// ```
+// * delete all non-less files from `less` directory (eg. .hbs files)
+// * `cd PACKAGE`
+// * `npm publish -reg https://cache.sugardev.team/repository/npm-sugar/`
+// * go to <a href="https://cache.sugardev.team/#browse/search=keyword%3Dstyleguide">private repository</a> to verify that your publish was successful
+//
+//
+// Weight: 6
+//
+// Styleguide Introduction.Releasing

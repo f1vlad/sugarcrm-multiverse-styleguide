@@ -1,0 +1,89 @@
+@NAME_OPENSANS_FONT: "@{FONT_NAME_PREFIX}Open Sans", sans-serif;
+
+.import-opensans() {
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: normal;
+    font-weight: 100;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-Light.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: italic;
+    font-weight: 100;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-LightItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: normal;
+    font-weight: 400;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: italic;
+    font-weight: 400;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-Italic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: normal;
+    font-weight: 600;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: italic;
+    font-weight: 600;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-SemiBoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: normal;
+    font-weight: 700;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: italic;
+    font-weight: 700;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-BoldItalic.ttf') format('truetype');
+  }
+
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: normal;
+    font-weight: 900;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-ExtraBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: '@{NAME_OPENSANS_FONT}';
+    font-style: italic;
+    font-weight: 900;
+    src:
+      url('@{PATH_OPENSANS_FONT}/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+  }
+
+}
+
+.opensans() {
+  font-family: '@{NAME_OPENSANS_FONT}';
+}

@@ -1,0 +1,21 @@
+
+.fa-anim(@anim_type, @anim_id) {
+  @id: ~"@{anim_id}";
+
+  & when (@anim_type = "spin") {
+    animation: @id 2s infinite linear;
+  }
+
+  & when (@anim_type = "pulse") {
+    animation: @id 1s infinite steps(8);
+  }
+
+  @keyframes @id {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

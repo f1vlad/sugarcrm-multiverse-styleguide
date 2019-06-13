@@ -1,0 +1,192 @@
+// Includes paths
+@PATH_STYLEGUIDE_ROOT: "/";
+@PATH_OPENSANS_FONT: "../../assets/fonts/opensans";
+@PATH_FONT_AWESOME_5_7_2: "../../../../assets/fonts/FontAwesome5.7.2";
+@PATH_SUGAR_FONT: "../../../assets/fonts/SugarFont";
+
+// SugarCRM logo colours
+@sugar_logo_color_top: #e41e26;
+@sugar_logo_color_left: #343433;
+@sugar_logo_color_right: #cecccb;
+
+// Alt colours for svg backgound Character `#` is reserved in URL
+// must encode as %23 for the URL to be valid
+@sugar_logo_color_top_svg: '%23e41e26';
+@sugar_logo_color_left_svg: '%23343433';
+@sugar_logo_color_right_svg: '%23cecccb';
+
+// Form states and alerts
+@inform: @pacific;
+@infoText: @inform;
+@infoAlertText: @white;
+@infoBackground: @inform;
+@infoBorder: @inform;
+
+@success: @green;
+@successText: @success;
+@successAlertText: @white;
+@successBackground: @success;
+@successBorder: @success;
+
+@warning: #fbc02d;
+@warningText: @warning;
+@warningAlertText: @white;
+@warningBackground: @warning;
+@warningBorder: @warning;
+
+@error: @red;
+@errorText: @error;
+@errorAlertText: @white;
+@errorBackground: @error;
+@errorBorder: @error;
+
+@warningTableBackground:lighten(@yellow, 47%);
+@confirmationBackground:lighten(@yellow, 47%);
+
+@loadingBackground: darken(@white, 3.4%);
+@loadingBorder: lighten(@black, 44.3%);
+
+// Buttons
+@btnFontSize: @baseFontSize - 1;
+@btnFontSizeLarge: @baseFontSize + 1em;
+@btnFontSizeSmall: @baseFontSize - 2em;
+@btnFontSizeMini: @baseFontSize - 4em;
+
+@btnBackground: @grayLighter;
+@btnBackgroundHighlight: @grayLighter;
+@btnBorder: darken(@grayLighter, 10%);
+
+@btnPrimaryBackground: @PrimaryButton;
+@btnPrimaryBackgroundHighlight: @PrimaryButton;
+
+@btnInfoBackground: @inform;
+@btnInfoBackgroundHighlight: @inform;
+@btnSuccessBackground: @success;
+@btnSuccessBackgroundHighlight: @success;
+@btnWarningBackground: @warning;
+@btnWarningBackgroundHighlight: @warning;
+@btnDangerBackground: @error;
+@btnDangerBackgroundHighlight: @error;
+@btnInverseBackground: @black;
+@btnInverseBackgroundHighlight: @black;
+
+@btnSecondaryBackground: #f2f5f9;
+@btnSecondaryBorder: #d3dbe1;
+@btnSecondaryColor: @linkColor;
+@btnSecondaryBoxShadowActive: inset 0 1px 3px 0 rgba(1, 21, 35, 0.1);
+@btnSecondaryBackgroundFocus: @white;
+@btnSecondaryBackgroundDisabled: #f8fafd;
+@btnSecondaryColorDisabled: rgba(6, 121, 200, 0.3);
+
+// Buttons (reskin)
+// -------------------------
+@PrimaryButtonBorder: #055993;
+@PrimaryButtonColor: @white;
+@btnPrimaryActiveBackground: #005087;
+@btnPrimaryActiveBorder: #033d64;
+@btnPrimaryHoverBackground: #0463a4;
+@btnPrimaryHoverActiveBgGrad: rgba(0, 21, 35, 0.1);
+@btnPrimaryHoverBorder: #033d64;
+@btnBackground: @white;
+@btnBackgroundHighlight: @white;
+@btnActiveBackground: #021e32;
+@btnIconColor: @black;
+@btnDisabledIconColor: #b2b2b2;
+@inputBorderColor: #ebedef;
+
+// Links
+@linkColor: @PrimaryButton;
+@linkColorHover: darken(@linkColor, 10%);
+@linkMore: @PrimaryButton;
+
+// Core theme variables
+@BorderColor: #d3dbe1;// 3 pixel line on the navbar
+@NavigationBar: #fff;// color of the navbar
+@PrimaryButton: #0679c8;
+
+// Typography
+@sansFontFamily: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+@serifFontFamily: Georgia, "Times New Roman", Times, serif;
+@monoFontFamily: Menlo, Monaco, Consolas, "Courier New", monospace;
+@baseFontSize: 12px;
+@baseFontFamily: @sansFontFamily;
+@baseLineHeight: 18px;
+@altFontFamily: @serifFontFamily;
+@headingsFontFamily: inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight: bold; // instead of browser default, bold
+@headingsColor: inherit; // empty to use BS default, @textColor
+
+// Component sizing
+@fontSizeHeader: @baseFontSize + 3px;
+@fontSizeLarge: @baseFontSize + 3px;
+@fontSizeMedium: @baseFontSize + 1px;
+@fontSizeSmall: @baseFontSize - 2px;
+@fontSizeMini: @baseFontSize - 4px;
+@paddingLarge: 6px 8px;
+@paddingSmall: 2px 6px;
+@paddingMini: 0 4px;
+@baseBorderRadius: 3px;
+@borderRadiusLarge: 6px;
+@borderRadiusSmall: 2px;
+@borderRadiusMini: 2px;
+
+// Alert
+@alertFontSize: @baseFontSize + 2px; // 14px
+@alertIconFontSize: @baseFontSize + 3px; // 15px
+@alertError: @rose;
+@alertErrorText: @red;
+@alertInfo: @ocean;
+@alertInfoText: @stone;
+@alertSuccess: @green;
+@alertSuccessText: @moss;
+@alertWarning: @orange;
+@alertWarningText: @cider;
+@alertConfirmationBackground: @cream;
+
+// Scaffolding
+@bodyBackground: @white;
+@textColor: @gray;
+
+// Horizontal forms & lists
+@horizontalComponentOffset: 180px;
+
+// Hr border color
+@hrBorder: @grayLighter;
+
+// Z-index master list
+@zindexDefault: 1;
+@zindexDropdown: 1000;
+@zindexPopover: 1010;
+@zindexFixedNavbar: 1030;
+@zindexFixedFooter: 1031;
+@zindexTooltip: 1070;
+@zindexModalBackdrop: 1040;
+@zindexModal: 1050;
+@zindexHeaderpane: 1002;
+
+// Dropdowns
+@dropdownBackground: @white;
+@dropdownBorder: @grayLighter;
+@dropdownDividerTop: darken(@grayLighter, 10%);
+@dropdownDividerBottom: @white;
+@dropdownLinkColor: @gray;
+@dropdownLinkColorHover: @linkColor;
+@dropdownLinkColorActive: darken(@linkColor, 10%);
+@dropdownLinkBackgroundHover: lighten(@linkColor, 48%);
+@dropdownLinkBackgroundActive: lighten(@linkColor, 40%);
+@dropdownDisabledBackground: @grayLighter;
+@dropdownDisabledLinkColor: @grayLight;
+
+// Navbar
+@navbarDivider: #D3DBE1;
+@navbarShadowColor: #D3DBE1;
+@navbarItemActiveBg: #e4e9ed;
+@navbarItemHoverBg: #f7f8f9;
+@navbarItemHoverColor: #6b7479;
+@navbarDropdownItemHoverBg: #0679c8;
+@navbarDropdownItemHoverColor: @white;
+
+// Misc
+@borderWidget: 1px solid darken(@grayLighter, 10%);
+@borderWidgetLight: 1px solid darken(@grayLighter, 5%);
+@FONT_NAME_PREFIX: "";

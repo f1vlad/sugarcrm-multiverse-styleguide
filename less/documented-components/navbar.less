@@ -1,0 +1,446 @@
+// Horizontal navbar
+//
+// Markup: hbs/navbar-horizontal.hbs
+//
+// ```
+// .MY_NAVBAR_HORIZONTAL {
+//   .navbar("horizontal"; span; a; ~".selected"; false; false);
+//
+//   .MY_BRAND {
+//     .sugar-cube('default'; 22px);
+//     margin: 12px 0 0;
+//   }
+// }
+//
+// .MY_NAVBAR_HORIZONTAL_WITH_DROPDOWNS {
+//   .navbar("horizontal"; ~"li.menu-item"; a; ~".active"; ~".SHOW_MENU"; ~"span.DD");
+//
+//   .MY_BRAND {
+//     .sugar-cube('default'; 22px);
+//     margin: 12px 0 0;
+//   }
+//
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+//
+//   .DD {
+//     .navbar-submenu-menu("floating"; span);
+//
+//     .DIVIDER {
+//       .navbar-submenu-menu-divider();
+//     }
+//   }
+// }
+//
+// .MY_NAVBAR_HORIZONTAL_CLASS_NAMES {
+//   .navbar("horizontal"; ~".nav--item"; ~".nav--item-link"; ~".loaded"; false; false);
+//
+//   .MY_BRAND {
+//     .sugar-cube(~"%23000", 22px);
+//     margin: 12px 0 0;
+//   }
+//
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+// }
+// .MY_USER_AVATAR0 {
+//   .avatar();
+//   float: left;
+//   margin-right: .5em;
+//
+//   &:after { margin-top: 10px; }
+// }
+// ```
+// democssclasses: true
+//
+// cssclasses:
+// .MY_NAVBAR_HORIZONTAL {
+//   .navbar("horizontal"; span; a; ~".selected"; false; false);
+//   .MY_BRAND {
+//     .sugar-cube('default'; 22px);
+//     margin: 12px 0 0;
+//   }
+// }
+// .MY_NAVBAR_HORIZONTAL_WITH_DROPDOWNS {
+//   .navbar("horizontal"; ~"li.menu-item"; a; ~".active"; ~".SHOW_MENU"; ~"span.DD");
+//   .MY_BRAND {
+//     .sugar-cube('default'; 22px);
+//     margin: 12px 0 0;
+//   }
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+//   .DD {
+//     .navbar-submenu-menu("floating"; span);
+//     .DIVIDER {
+//       .navbar-submenu-menu-divider();
+//     }
+//   }
+// }
+// .MY_NAVBAR_HORIZONTAL_CLASS_NAMES {
+//   .navbar("horizontal"; ~".nav--item"; ~".nav--item-link"; ~".loaded"; false; false);
+//   .MY_BRAND {
+//     .sugar-cube(~"%23000", 22px);
+//     margin: 12px 0 0;
+//   }
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+// }
+// .MY_USER_AVATAR0 {
+//   .avatar();
+//   float: left;
+//   margin-right: .5em;
+//   &:after { margin-top: 10px; }
+// }
+//
+// Weight: 1
+//
+// Styleguide LayoutsAndViews.NavbarHorizontal
+
+// Vertical navbar
+//
+// Markup: hbs/navbar-vertical.hbs
+//
+// democssclasses: true
+//
+// ```
+// .MY_NAVBAR_VERTICAL_WRAPPER { height: 400px; }
+//
+// .MY_NAVBAR_VERTICAL {
+//   .navbar("vertical"; li; a; ~".current"; false; false);
+//
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px);
+//     vertical-align: middle;
+//   }
+// }
+//
+// .MY_NAVBAR_VERTICAL_WITH_ICONS {
+//   .navbar("vertical"; ~"span.menu"; a; ~".active"; ~".SUBMENU_OPEN"; ~"div.SUBMENU");
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px);
+//     vertical-align: middle;
+//   }
+//
+//   .ICON_GITHUB {
+//     .getFaIcon('github'; 'fab');
+//     .fa-fw;
+//   }
+//
+//   .ICON_CAR {
+//     .getFaIcon('car-side');
+//     .fa-fw;
+//   }
+//
+//   .ICON_CANNABIS {
+//     .getFaIcon('cannabis');
+//     .fa-fw;
+//   }
+//
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+//
+//   .SUBMENU {
+//     .navbar-submenu-menu("inline"; span);
+//
+//     .DIVIDER {
+//       .navbar-submenu-menu-divider();
+//     }
+//   }
+// }
+//
+// .MY_NAVBAR_VERTICAL_WITH_CLASS_NAMES {
+//   .navbar("vertical"; ~".navigation-item"; ~".navigation-item-link"; ~".active"; false; false);
+//
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px; true);
+//     vertical-align: middle;
+//   }
+// }
+//
+// .MY_USER_AVATAR {
+//   .avatar();
+//   float: left;
+//   margin-right: .5em;
+//
+//   &:after { margin-top: 10px; }
+// }
+// ```
+//
+// cssclasses:
+// .MY_NAVBAR_VERTICAL_WRAPPER { height: 400px; }
+// .MY_NAVBAR_VERTICAL {
+//   .navbar("vertical"; li; a; ~".current"; false; false);
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px);
+//     vertical-align: middle;
+//   }
+// }
+// .MY_NAVBAR_VERTICAL_WITH_ICONS {
+//   .navbar("vertical"; ~"span.menu"; a; ~".active"; ~".SUBMENU_OPEN"; ~"div.SUBMENU");
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px);
+//     vertical-align: middle;
+//   }
+//   .ICON_GITHUB {
+//     .getFaIcon('github'; 'fab');
+//     .fa-fw;
+//   }
+//   .ICON_CAR {
+//     .getFaIcon('car-side');
+//     .fa-fw;
+//   }
+//   .ICON_CANNABIS {
+//     .getFaIcon('cannabis');
+//     .fa-fw;
+//   }
+//   .CARET_DOWN {
+//     .getFaIcon('caret-down');
+//   }
+//   .SUBMENU {
+//     .navbar-submenu-menu("inline"; span);
+//     .DIVIDER {
+//       .navbar-submenu-menu-divider();
+//     }
+//   }
+// }
+// .MY_NAVBAR_VERTICAL_WITH_CLASS_NAMES {
+//   .navbar("vertical"; ~".navigation-item"; ~".navigation-item-link"; ~".active"; false; false);
+//   .MY_BRAND {
+//     .sugar-logo(20px; 150px; true);
+//     vertical-align: middle;
+//   }
+// }
+// .MY_USER_AVATAR {
+//   .avatar();
+//   float: left;
+//   margin-right: .5em;
+//   &:after { margin-top: 10px; }
+// }
+//
+// Weight: 2
+//
+// Styleguide LayoutsAndViews.NavbarVertical
+
+.navbar(@type; @navbarItemEl; @navbarItemElLink; @navbarItemActiveClass; @navbarItemDropdownOpenClass; @navbarItemDropdownMenuEl) {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    // Horizontal navbar
+    & when (@type = "horizontal") {
+        flex-direction: row;
+        width: 100%;
+        .shadow-widget(0px 3px 3px; @navbarShadowColor);
+
+        > @{navbarItemEl} {
+            &:first-child {
+                border-right-width: 1px;
+                border-right-style: solid;
+            }
+
+            &:last-child {
+                border-left-width: 1px;
+                border-left-style: solid;
+                border-left-color: @navbarDivider;
+            }
+
+            > @{navbarItemElLink}:nth-child(1) {
+                max-width: 200px; // should be discussed with UIUX
+            }
+        }
+    }
+
+    // Vertical navbar
+    & when (@type = "vertical") {
+        flex-direction: column;
+        width: 200px;
+        height: 100%;
+        .shadow-widget(3px 0px 3px; @navbarShadowColor);
+
+        > @{navbarItemEl} {
+            &:first-child {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+            }
+
+            > @{navbarItemElLink}:nth-child(1) {
+                width: 100%;
+            }
+
+            > @{navbarItemElLink}:nth-child(2) {
+                flex-basis: 40px;
+            }
+        }
+    }
+
+    // Default navbar item element
+    > @{navbarItemEl} {
+        display: flex;
+        height: 48px;
+        line-height: 48px;
+        box-sizing: inherit;
+        color: @black;
+        text-decoration: none;
+        position: relative;
+
+        // Setting up default divider colour, usually
+        // it's a SugarCRM logo on vertical, cube on horizontal 
+        &:first-child {
+            border-color: @navbarDivider;
+        }
+
+        &@{navbarItemActiveClass} {
+            &,
+            &:hover {
+                background: @navbarItemActiveBg;
+                color: @black;
+            }
+        }
+
+        &:hover {
+            & {
+                background: @navbarItemHoverBg;
+                color: @navbarItemHoverColor;
+            }
+        }
+
+        // Main [first] menu item, usually text
+        > @{navbarItemElLink}:nth-child(1) {
+            color: inherit;
+            text-decoration: inherit;
+            height: inherit;
+            padding: 0 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+        // Secondary menu item, usually caret-down for dropdown menu
+        > @{navbarItemElLink}:nth-child(2) {
+            color: inherit;
+            width: 18px;
+            text-align: center;
+            margin-left: -10px;
+            cursor: pointer;
+        }
+    }
+
+    // Empty element that grows pushing last menu item to far right
+    > @{navbarItemEl}:empty {
+        flex-grow: 1;
+
+        // When last element in navbar is empty, we need not grow it, make it invisible
+        ~ :empty {
+            flex-grow: 0;
+            border: none;
+        }
+
+        &,
+        &:hover {
+            background: none;
+        }
+    }
+
+    // Navbar item has interactive dropdown menu
+    @{navbarItemEl} {
+        & when not (@navbarItemDropdownOpenClass = false) {
+            & when (@type = "horizontal") {
+                &:not(@{navbarItemDropdownOpenClass}) @{navbarItemDropdownMenuEl} {
+                    display: none;
+                }
+            }
+
+            & when (@type = "vertical") {
+                &:not(@{navbarItemDropdownOpenClass}) + @{navbarItemDropdownMenuEl} {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.navbar-submenu-menu(@type; @menuItemEl) {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    & when (@type = "floating") {
+        position: absolute;
+        top: 47px;
+        left: 0;
+        z-index: @zindexDropdown;
+        border-radius: 0 0 @baseBorderRadius @baseBorderRadius;
+        background: @white;
+        background-clip: padding-box;
+        border: @borderWidget;
+        min-width: 160px;
+        margin: 2px 0 0;
+
+        @{menuItemEl} {
+            height: 34px;
+
+            a {
+                padding: 8px 10px;
+                line-height: @baseLineHeight;
+
+                &:hover {
+                    color: @navbarDropdownItemHoverColor;
+                    background: @navbarDropdownItemHoverBg;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    & when (@type = "inline") {
+        @{menuItemEl} {
+            height: 48px;
+            
+            a {
+                padding: 0 16px;
+                line-height: 48px;
+
+                &:hover {
+                    background: @navbarItemHoverBg;
+                    color: @navbarItemHoverColor;
+                }
+            }
+        }
+    }
+
+    @{menuItemEl} {
+        display: inline-block;
+
+        a {
+            width: 100%;
+            max-width: 240px;
+            font-weight: normal;
+            color: @dropdownLinkColor;
+            white-space: nowrap;
+            cursor: pointer; 
+            display: inline-block;
+            box-sizing: border-box;
+            text-decoration: none;
+            .text-overflow-ellipsis();
+        
+        }
+    }
+
+
+}
+
+.navbar-submenu-menu-divider() {
+    margin: 0;
+    padding: 0;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: darken(@grayLighter, 10%);
+    height: 0;
+}

@@ -1,17 +1,26 @@
 {
-  "name": "sugarcrm-multiverse-styleguide",
-  "version": "0.0.1",
-  "description": "USAGE",
-  "main": "index.js",
+  "name": "@sugarcrm/sugarcrm-multiverse-styleguide",
+  "version": "0.2.7",
+  "description": "",
+  "main": "npm.js",
   "scripts": {
-    "build:kss": "kss --config kss-config.json",
+    "build": "./build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "https://github.com/f1vlad",
+  "author": "https://github.com/sugarcrm/multiverse",
   "license": "ISC",
   "devDependencies": {
+    "csso-cli": "^2.0.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-csso": "^3.0.1",
     "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1",
-    "gulp-uglifycss": "^1.1.0"
+    "kss": "^3.0.0-beta.25",
+    "less": "^3.9.0"
+  },
+  "publishConfig": {
+    "registry": "https://cache.sugardev.team/repository/npm-sugar/"
   }
 }

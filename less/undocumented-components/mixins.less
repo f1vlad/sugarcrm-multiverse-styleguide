@@ -1,0 +1,76 @@
+// Clearfix
+// For clearing floats like a boss h5bp.com/q
+.clearfix() {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// Text overflow
+// Requires inline-block or block for proper styling
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// FONTS
+// #font {
+//   #family {
+//     .serif() {
+//       font-family: @serifFontFamily;
+//     }
+//     .sans-serif() {
+//       font-family: @sansFontFamily;
+//     }
+//     .monospace() {
+//       font-family: @monoFontFamily;
+//     }
+//   }
+//   .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+//     font-size: @size;
+//     font-weight: @weight;
+//     line-height: @lineHeight;
+//   }
+//   .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+//     #font > #family > .serif;
+//     #font > .shorthand(@size, @weight, @lineHeight);
+//   }
+//   .sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+//     #font > #family > .sans-serif;
+//     #font > .shorthand(@size, @weight, @lineHeight);
+//   }
+//   .monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+//     #font > #family > .monospace;
+//     #font > .shorthand(@size, @weight, @lineHeight);
+//   }
+// }
+
+// Webkit-style focus
+.tab-focus() {
+  // Default
+  outline: 3px auto #589bda;
+  // Firefox
+  outline: 3px auto -moz-mac-focusring;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.shadow-widget(@spread; @color) {
+  box-shadow: @spread @color;
+}
+
+.text-overflow-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

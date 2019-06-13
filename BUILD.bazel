@@ -1,0 +1,124 @@
+load("@io_bazel_rules_docker//container:container.bzl", "container_image")
+load("@build_bazel_rules_nodejs//:defs.bzl", "npm_package")
+
+filegroup(
+    name = "src_files",
+    srcs = glob([
+        "src/**",
+        "build.sh",
+        "kss-config.json",
+        "custom-builder/**",
+        "kss/**",
+        "less/**",
+        "assets/**",
+    ]),
+)
+
+filegroup(
+    name = "npm_files",
+    srcs = glob([
+        "less/*documented-components/*.less",
+        "less/config.less",
+        "less/lib/*.less",
+        "assets/fonts/FontAwesome5.7.2/**",
+        "assets/fonts/SugarFont/**",
+        "assets/fonts/opensans/**",
+        "npm.js",
+    ]),
+)
+
+# we have to copy over the source files using a tar (with -h) instead of relying on symlinks.
+# In the node world, a file and a symlink to that file are not the same and will break instanceof checks.
+genrule(
+    name = "sources_tar",
+    srcs = [
+        ":src_files",
+        ":package_json",
+    ],
+    outs = ["sources.tgz"],
+    cmd = " && ".join([
+        "OUT=$$(pwd)/$@",
+        "cd $$(dirname $(location :package_json))",
+        "tar cfzh $$OUT src custom-builder kss less assets build.sh kss-config.json package.json",
+    ]),
+    visibility = ["//visibility:private"],
+)
+
+# package_json is outside sources_tar just so we have a single file to point at for cd $(dirname foo)
+filegroup(
+    name = "package_json",
+    srcs = ["package.json"],
+)
+
+# production files will include only the dist directory to be copied into the nginx container (no less files)
+genrule(
+    name = "prod_build_tar",
+    srcs = [
+        ":sources_tar",
+        "@styleguide_doc_deps//:node_modules",
+        # Use the npm included in bazel rather than on the host machine
+        "@nodejs//:bin/npm",
+    ],
+    outs = ["dist.tar.gz"],
+    cmd = " && ".join([
+        # These lines find where the node_modules were placed in the sandbox
+        # and store it in NODE_PATH
+        "SRC_TAR=$$(pwd)/$(location :sources_tar)",
+        "dir=`echo $(locations @styleguide_doc_deps//:node_modules) | cut -d ' ' -f 1`",
+        "dir=$$(dirname $$(dirname $$dir))",
+        "NODE_PATH=$$(pwd)/$$dir",
+        "NPM=$$(pwd)/$(location @nodejs//:bin/npm)",
+        "TMP_BUILD_DIR=tmp_build_dir",
+
+        # Store the output file path in a variable
+        "OUT=$$(pwd)/$@",
+
+        # Create a tmp dir to untar the sources into
+        "mkdir $$TMP_BUILD_DIR && cd $$_",
+        "tar -xf $$SRC_TAR",
+
+        # Link the node modules dir into the project sandbox dir
+        "ln -s $$NODE_PATH node_modules",
+
+        # Build the app
+        "$$NPM run build",
+
+        # Finally build the output tarball
+        # Note: package.json is needed for npm
+        "tar cfz $$OUT dist",
+
+        # Remove the temp build directory
+        "cd ..",
+        "rm -rf $$TMP_BUILD_DIR",
+    ]),
+    tools = ["@nodejs//:npm"],
+    visibility = ["//visibility:public"],
+)
+
+# Build docker image out of generated production html/js dist files.
+# port:80 default
+container_image(
+    name = "docker",
+    base = "@nginx_1_15_alpine//image",
+    directory = "/app",
+    # files = [
+    #     "docker/nginx/default.conf",
+    # ],
+    symlinks = {
+        "/usr/share/nginx/html": "/app/dist",
+        # "/etc/nginx/conf.d/default.conf": "/app/default.conf",
+    },
+    tars = [
+        "//projects/styleguide:prod_build_tar",
+    ],
+    visibility = ["//visibility:public"],
+    workdir = "/app",
+)
+
+npm_package(
+    name = "npm",
+    srcs = [
+        "package.json",
+    ],
+    deps = ["//projects/styleguide:npm_files"],
+)

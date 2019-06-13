@@ -1,5 +1,20 @@
-// or npm install less, lessc config.less ~/path/to/final.css --compress
-@import "shared/colors";
-@import "shared/variables";
+// less content not documenteed in styleguide
+@import "undocumented-components/variables";
+@import "undocumented-components/mixins";
+@import "undocumented-components/font";
 
-@import "components/button";
+// @import "lib/font-awesome-4.2.0/font-awesome";
+@import "lib/font-awesome-5.7.2/less/SUGAR_CUSTOMIZED_solid";
+@import "lib/font-awesome-5.7.2/less/SUGAR_CUSTOMIZED_regular";
+@import "lib/font-awesome-5.7.2/less/SUGAR_CUSTOMIZED_brands";
+@import "lib/font-awesome-5.7.2/less/fontawesome";
+@import (reference) "lib/font-awesome-sugar-extension/font-awesome-sugar-extension";
+
+// components documented in styleguide
+@import "documented-components/buttons";
+@import "documented-components/icons";
+@import "documented-components/navbar";
+@import "documented-components/colors";
+
+// to sort
+@import "documented-components/labs";

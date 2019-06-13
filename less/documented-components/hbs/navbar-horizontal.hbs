@@ -1,0 +1,88 @@
+<div class="MY_NAVBAR_HORIZONTAL">
+    <span>
+        <a><span class="MY_BRAND"></span></a>
+    </span>
+    <span>
+        <a>Menu 1</a>
+    </span>
+    <span class="selected">
+        <a>Selected Menu 2</a>
+    </span>
+    <span>
+        <a>Very long text appears on menu item number 3 that should turn into ellipsis</a>
+    </span>
+    <span></span><!-- intentionally empty element is a self-growing spacer in navbar -->
+    <span>
+        <a><span class="MY_USER_AVATAR"></span></a>
+    </span>
+</div>
+<br>&nbsp;
+
+<ul class="MY_NAVBAR_HORIZONTAL_WITH_DROPDOWNS">
+    <li class="menu-item menu-item-1">
+        <a><span class="MY_BRAND"></span></a><a onclick="toggleClass(`menu-item-1`, `SHOW_MENU`)"><i class="CARET_DOWN"></i></a>
+        <span class="DD">
+            <span><a>Submenu 1</a></span>
+            <span><a>Submenu 2</a></span>
+            <span><a>Submenu 3</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Submenu 4 with very very very very very long text</a></span>
+        </span>
+    </li>
+    <li class="menu-item menu-item-2">
+        <a>Menu 1</a> <a onclick="toggleClass(`menu-item-2`, `SHOW_MENU`)"><i class="CARET_DOWN"></i></a>
+        <span class="DD">
+            <span><a>Submenu 1</a></span>
+            <span><a>Submenu 2</a></span>
+            <span><a>Submenu 3</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Submenu 4 with very very very very very long text</a></span>
+        </span>
+    </li>
+    <li class="menu-item menu-item-3 active">
+        <a>Selected Menu 2</a> <a onclick="toggleClass(`menu-item-3`, `SHOW_MENU`)"><i class="CARET_DOWN"></i></a>
+        <span class="DD">
+            <span><a>Submenu 1</a></span>
+            <span><a>Submenu 2</a></span>
+            <span><a>Submenu 3</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Submenu 4 with very very very very very long text</a></span>
+        </span>
+    </li>
+    <li class="menu-item menu-item-4">
+        <a>Very long text appears on menu item number 3 that should turn into ellipsis</a> <a onclick="toggleClass(`menu-item-4`, `SHOW_MENU`)"><i class="CARET_DOWN"></i></a>
+        <span class="DD">
+            <span><a>Submenu 1</a></span>
+            <span><a>Submenu 2</a></span>
+            <span><a>Submenu 3</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Submenu 4 with very very very very very long text</a></span>
+        </span>
+    </li>
+    <li class="menu-item menu-item-5"></li><!-- intentionally empty element is a self-growing spacer in navbar -->
+    <li class="menu-item menu-item-6">
+        <a><span class="MY_USER_AVATAR"></span></a> <a onclick="toggleClass(`menu-item-6`, `SHOW_MENU`)"><i class="CARET_DOWN"></i></a>
+        <span class="DD">
+            <span><a>Submenu 1</a></span>
+            <span><a>Submenu 2</a></span>
+            <span><a>Submenu 3</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Submenu 4 with very very very very very long text</a></span>
+        </span>
+    </li>
+</ul>
+<br>&nbsp;
+
+<nav class="MY_NAVBAR_HORIZONTAL_CLASS_NAMES">
+    <article class="nav--item">
+        <span class="nav--item-link" href="#"><span class="MY_BRAND"></span></span>
+    </article>
+    <article class="nav--item">
+        <span class="nav--item-link" href="#">Menu 1</span>
+    </article>
+    <article class="nav--item loaded">
+        <span class="nav--item-link" href="#">Selected Menu 2</span>
+    </article>
+    <article class="nav--item"></article><!-- intentionally empty element is a self-growing spacer in navbar -->
+    <article class="nav--item"></article><!-- intentionally empty element, blank when avatar is not present -->
+</nav>

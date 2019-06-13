@@ -1,17 +1,13 @@
 ## USAGE
 
 ### Generate static styleguide
-(prerequisite: npm install -g kss)
-gulp OR gulp build:kss OR npm run-script build:kss
+`npm run build` -- creates dist folder with styleguide documentation
+OR
+```bash
+bazel run projects/styleguide:docker;
+docker run -p 8080:80 --name styleguide bazel/projects/styleguide:docker;
+open http://localhost:8080
+```
 
-### List of options
-kss --help
-
-### Full reference
-https://github.com/kss-node/kss-node/wiki/Quick-Start-Guide
-
-### KSS markup
-https://github.com/kss-node/kss/blob/spec/SPEC.md
-
-### Demo project
-https://github.com/kss-node/kss-node/tree/master/demo
+### Using and contributing to styleguide
+See Introduction section in styleguide documentation.

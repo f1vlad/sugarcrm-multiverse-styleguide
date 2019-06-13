@@ -1,0 +1,771 @@
+/* Basic properties that all button states get */
+.button() {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  line-height: @baseLineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: @btnFontSize;
+  border: 1px solid lighten(@grayLight, 40%);
+  height: 18px;
+  padding: 4px 6px;
+  border-radius: @baseBorderRadius;
+  color: @gray;
+  font-weight: 600;
+  box-sizing: content-box;
+  min-width: 12px;
+  font-family: inherit;
+
+  &:not([disabled]):not(:active):focus {
+    .tab-focus();
+    position: relative;
+  }
+}
+
+// Button basics
+//
+// All buttons automatically inherit the following states:
+// - normal -- default
+// - hover -- `:hover`
+// - active -- `:active`
+// - focus -- `:focus`
+// - disabled -- <a href="#kssref-forms-button-disabled">arbitrary class</a>
+//
+// Each button type inherits these states, no special CSS handling is required.
+//
+// Styleguide Forms.Button
+
+// Base button
+//
+// Markup: hbs/button-base.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_BASE {
+//   .button-base();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_BASE {
+//   .button-base();
+// }
+//
+// Weight: 1
+//
+// Styleguide Forms.Button.Base
+
+.button-base() {
+  .button();
+  &:hover {
+    background: darken(@white, 4%);
+  }
+
+  &:active {
+    background: darken(@white, 8%);
+  }
+}
+
+// Primary button
+//
+// Markup: hbs/button-primary.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_PRIMARY {
+//   .button-base();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_PRIMARY {
+//   .button-primary();
+// }
+//
+//
+// Weight: 2
+//
+// Styleguide Forms.Button.Primary
+
+.button-primary() {
+  .button();
+  border-color: @PrimaryButtonBorder;
+  background-color: @PrimaryButton;
+  color: @PrimaryButtonColor;
+
+  &:hover {
+    border-color: @btnPrimaryHoverBorder;
+    background: @btnPrimaryHoverBackground;
+  }
+
+  &:active {
+    background: darken(@btnPrimaryHoverBackground, 8%);
+  }
+}
+
+// Secondary button
+//
+// Markup: hbs/button-secondary.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .button-secondary();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .button-secondary();
+// }
+//
+// Weight: 3
+//
+// Styleguide Forms.Button.Secondary
+
+.button-secondary() {
+  .button();
+  background-color: @btnSecondaryBackground;
+  border-color: @btnSecondaryBorder;
+  color: @btnSecondaryColor;
+
+  &:hover {
+    background: darken(@btnSecondaryBackground, 4%);
+  }
+
+  &:active {
+    background: darken(@btnSecondaryBackground, 8%);
+  }
+}
+
+// Unstyled button (link)
+//
+// Markup: hbs/button-link.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_LINK {
+//   .button-link();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_LINK {
+//   .button-link();
+// }
+//
+// Weight: 4
+//
+// Styleguide Forms.Button.Link
+
+.button-link() {
+  .button();
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-color: transparent;
+  cursor: pointer;
+  color: @linkColor;
+  border-radius: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Info button
+//
+// Markup: hbs/button-info.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_INFO {
+//   .button-info();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_INFO {
+//   .button-info();
+// }
+//
+// Weight: 5
+//
+// Styleguide Forms.Button.Info
+
+.button-info() {
+  .button();
+  background-color: @btnInfoBackground;
+  border-color: darken(@btnInfoBackground, 10%);
+  color: @white;
+
+  &:hover {
+    background: darken(@btnInfoBackground, 4%);
+  }
+
+  &:active {
+    background: darken(@btnInfoBackground, 8%);
+  }
+}
+
+// Success button
+//
+// Markup: hbs/button-success.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_SUCCESS {
+//   .button-success();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_SUCCESS {
+//   .button-success();
+// }
+//
+// Weight: 6
+//
+// Styleguide Forms.Button.Success
+
+.button-success() {
+  .button();
+  background-color: @btnSuccessBackground;
+  border-color: darken(@btnSuccessBackground, 10%);
+  color: @white;
+
+  &:hover {
+    background: darken(@btnSuccessBackground, 4%);
+  }
+
+  &:active {
+    background: darken(@btnSuccessBackground, 8%);
+  }
+}
+
+// Warning button
+//
+// Markup: hbs/button-warning.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_WARNING {
+//   .button-warning();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_WARNING {
+//   .button-warning();
+// }
+//
+// Weight: 7
+//
+// Styleguide Forms.Button.Warning
+
+.button-warning() {
+  .button();
+  background-color: @btnWarningBackground;
+  border-color: darken(@btnWarningBackground, 10%);
+  color: @black;
+
+  &:hover {
+    background: darken(@btnWarningBackground, 4%);
+  }
+
+  &:active {
+    background: darken(@btnWarningBackground, 8%);
+  }
+}
+
+// Danger button
+//
+// Markup: hbs/button-danger.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_DANGER {
+//   .button-danger();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_DANGER {
+//   .button-danger();
+// }
+//
+// Weight: 8
+//
+// Styleguide Forms.Button.Danger
+
+.button-danger() {
+  .button();
+  background-color: @btnDangerBackground;
+  border-color: darken(@btnDangerBackground, 10%);
+  color: @white;
+
+  &:hover {
+    background: darken(@btnDangerBackground, 4%);
+  }
+
+  &:active {
+    background: darken(@btnDangerBackground, 8%);
+  }
+}
+
+// Inverse button
+//
+// Markup: hbs/button-inverse.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_INVERSE {
+//   .button-inverse();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_INVERSE {
+//   .button-inverse();
+// }
+//
+// Weight: 9
+//
+// Styleguide Forms.Button.Inverse
+
+.button-inverse() {
+  .button();
+  background-color: @btnInverseBackground;
+  border-color: darken(@btnInverseBackground, 10%);
+  color: @white;
+}
+
+// Disabled button
+//
+// Markup: hbs/button-disabled.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_GENERAL[disabled] {
+//   .button-disabled();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_GENERAL[disabled] {
+//   .button-disabled();
+// }
+//
+// Weight: 10
+//
+// Styleguide Forms.Button.Disabled
+
+.button-disabled() {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.65;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+// Button sizes
+//
+// Markup: hbs/button-sizes.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_LARGE {
+//   .button-danger()
+//   .button-large();
+// }
+//
+// .EXAMPLE_BUTTON_DEFAULT {
+//   .button();
+// }
+//
+// .EXAMPLE_BUTTON_SMALL {
+//   .button-success();
+//   .button-small();
+// }
+//
+// .EXAMPLE_BUTTON_MINI {
+//   .button-primary();
+//   .button-mini();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_LARGE {
+//   .button-danger();
+//   .button-large();
+// }
+// .EXAMPLE_BUTTON_DEFAULT {
+//   .button-base();
+// }
+// .EXAMPLE_BUTTON_SMALL {
+//   .button-success();
+//   .button-small();
+// }
+// .EXAMPLE_BUTTON_MINI {
+//   .button-primary();
+//   .button-mini();
+// }
+//
+// Weight: 11
+//
+// Styleguide Forms.Button.Sizes
+
+.button-large() {
+  padding: @paddingLarge;
+  font-size: @btnFontSizeLarge;
+}
+
+.button-small() {
+  padding: @paddingSmall;
+  font-size: @btnFontSizeSmall;
+}
+
+.button-mini() {
+  padding: @paddingMini;
+  font-size: @btnFontSizeMini;
+}
+
+// Button groups
+//
+// Markup: hbs/button-group.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_GROUP_1 {
+//   .button-group();
+// }
+//
+// .EXAMPLE_BUTTON_GROUP_2 {
+//   .button-group(a);
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_GROUP_1 {
+//   .button-group();
+// }
+// .EXAMPLE_BUTTON_GROUP_2 {
+//   .button-group(a);
+// }
+//
+// Weight: 12
+//
+// Styleguide Forms.Button.Groups
+
+.button-group(@groupedButtonsEl: ~"> *") {
+  display: flex;
+
+  @{groupedButtonsEl} {
+    border-radius: 0;
+  }
+
+  @{groupedButtonsEl}:not(:first-child) {
+    margin-left: -1px;
+  }
+
+  @{groupedButtonsEl}:first-child:not(:last-of-type) {
+    margin-left: 0;
+    border-radius: @baseBorderRadius 0 0 @baseBorderRadius;
+  }
+
+  @{groupedButtonsEl}:last-child {
+    border-radius: 0 @baseBorderRadius @baseBorderRadius 0;
+  }
+}
+
+// Buttons dropdowns
+//
+// Markup: hbs/button-dropdown.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_DROPDOWN_1 {
+//   .button-group-dropdown(span; a; ~".open");
+//   display: inline-block;
+//
+//   .DROPDOWN_CARET_ICON {
+//     .getFaIcon('caret-down');
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_DROPDOWN_2 {
+//   .button-group-dropdown(ul; li; ~".SHOW_MENU");
+//   display: inline-block;
+//
+//   .DROPDOWN_CARET_ICON {
+//     .getFaIcon('caret-down');
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_DROPDOWN_3 {
+//   .button-group-dropdown(~"span#EXAMPLE_MENU_3"; ~"span.MENU-ITEM"; ~".MENU_VISIBLE");
+//   display: inline-block;
+// }
+//
+// .EXAMPLE_DROPDOWN_ITEM_DIVIDER {
+//   .button-group-dropdown-menu-divider();
+// }
+//
+// .EXAMPLE_GROUP_SOME_BUTTONS {
+//   .button-group();
+// }
+//
+// .EXAMPLE_DROPDOWN_ITEM {
+//   .button-group-dropdown-menu-item();
+// }
+//
+// .EXAMPLE_BUTTON_DROPDOWN_MENU_STAND_ALONE {
+//   .button-group-dropdown-menu-appearance(); 
+//
+//   li a {
+//     .button-group-dropdown-menu-item();
+//   }
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_DROPDOWN_1 {
+//   .button-group-dropdown(span; a; ~".open");
+//   display: inline-block;
+//   .DROPDOWN_CARET_ICON {
+//     .getFaIcon('caret-down');
+//   }
+// }
+// .EXAMPLE_BUTTON_DROPDOWN_2 {
+//   .button-group-dropdown(ul; li; ~".SHOW_MENU");
+//   display: inline-block;
+//   .DROPDOWN_CARET_ICON {
+//     .getFaIcon('caret-down');
+//   }
+// }
+// .EXAMPLE_BUTTON_DROPDOWN_3 {
+//   .button-group-dropdown(~"span#EXAMPLE_MENU_3"; ~"span.MENU-ITEM"; ~".MENU_VISIBLE");
+//   display: inline-block;
+// }
+// .EXAMPLE_DROPDOWN_ITEM_DIVIDER {
+//   .button-group-dropdown-menu-divider();
+// }
+// .EXAMPLE_GROUP_SOME_BUTTONS {
+//   .button-group();
+// }
+// .EXAMPLE_DROPDOWN_ITEM {
+//   .button-group-dropdown-menu-item();
+// }
+// .EXAMPLE_BUTTON_DROPDOWN_MENU_STAND_ALONE {
+//   .button-group-dropdown-menu-appearance(); 
+//   li a {
+//     .button-group-dropdown-menu-item();
+//   }
+// }
+//
+// Weight: 13
+//
+// Styleguide Forms.Button.Dropdowns
+
+.button-group-dropdown(@dropdownMenuEl; @dropdownMenuItemEl; @dropdownMenuToggleClass) {
+  position: relative;
+
+  &:not(@{dropdownMenuToggleClass}) > @{dropdownMenuEl} {
+    display: none;
+  }
+
+  > @{dropdownMenuEl} {
+    .button-group-dropdown-menu-position();
+    .button-group-dropdown-menu-appearance();
+
+    > @{dropdownMenuItemEl} {
+      .button-group-dropdown-menu-item();
+    }
+  }
+}
+
+.button-group-dropdown-menu-position() {
+  position: absolute;
+  z-index: @zindexDropdown;
+}
+
+.button-group-dropdown-menu-appearance() {
+  max-width: 240px;
+  border-radius: @baseBorderRadius;
+  background: @white;
+  background-clip: padding-box;
+  border: 1px solid #ddd;
+  min-width: 160px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.button-group-dropdown-menu-item() {
+  display: block;
+  padding: 8px 10px;
+  clear: both;
+  font-weight: normal;
+  line-height: @baseLineHeight;
+  color: @dropdownLinkColor;
+  white-space: nowrap;
+  cursor: pointer; 
+  .text-overflow-ellipsis();
+
+  &:hover {
+    color: @dropdownLinkColorHover;
+    text-decoration: none;
+    background: @dropdownLinkBackgroundHover;
+    filter: none;
+  }
+}
+
+.button-group-dropdown-menu-divider() {
+  margin: 0;
+  padding: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: darken(@grayLighter, 10%);
+  height: 0;
+}
+
+// Miscellaneous
+//
+// Markup: hbs/button-misc.hbs
+//
+// ```
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .ICON_BOOK {
+//     .getFaIcon('book');
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_GROUP_1abc {
+//   .button-group();
+//   .ICON_ALIGN_LEFT { .getFaIcon('align-left'); }
+//   .ICON_ALIGN_CENTER { .getFaIcon('align-center'); }
+//   .ICON_ALIGN_RIGTH { .getFaIcon('align-right'); }
+//   .ICON_ALIGN_JUSTIFY { .getFaIcon('align-justify'); }
+// }
+//
+// .EXAMPLE_BUTTON_DROPDOWN_3 {
+//   .EXAMPLE_GROUP_SOME_BUTTONS {
+//     .ICON_AVATAR {
+//       .getFaIcon('user');
+//     }
+//
+//     .ICON_CARET_DOWN {display: none;
+//       .getFaIcon('caret-down');
+//     }
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .FA_ANIMATED_SPINNER {
+//     .getFaIcon('spinner');
+//     .fa-anim('spin', 'FA_ANIMATE_SPINNER');
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_DANGER {
+//   .FA_ICON_SYNC {
+//     .getFaIcon('sync');
+//     .fa-anim('spin', 'SYNC_ICON_ANIM');
+//   }
+//
+//   .LOADING_WIDGET_HERE {
+//     .loading('Wait for synchronizing to complete', @white);
+//   }
+// }
+//
+// .EXAMPLE_BUTTON_CUBE {
+//   .button();
+//
+//   .MY_SUGAR_LOGO {
+//     .sugar-cube('default');
+//   }
+//
+//   .FONT_AWESOME_SPIN {
+//     .fa-anim('spin', 'FA_ANIMATE_SUGAR_CUBE');
+//   }
+//
+//   svg {
+//     height: 10px;
+//   }
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .ICON_BOOK {
+//     .getFaIcon('book');
+//   }
+// }
+// .EXAMPLE_BUTTON_GROUP_1abc {
+//   .button-group();
+//   .ICON_ALIGN_LEFT { .getFaIcon('align-left'); }
+//   .ICON_ALIGN_CENTER { .getFaIcon('align-center'); }
+//   .ICON_ALIGN_RIGTH { .getFaIcon('align-right'); }
+//   .ICON_ALIGN_JUSTIFY { .getFaIcon('align-justify'); }
+// }
+// .EXAMPLE_BUTTON_DROPDOWN_3 {
+//   .EXAMPLE_GROUP_SOME_BUTTONS {
+//     .ICON_AVATAR {
+//       .getFaIcon('user');
+//     }
+//     .ICON_CARET_DOWN {display: none;
+//       .getFaIcon('caret-down');
+//     }
+//   }
+// }
+// .EXAMPLE_BUTTON_SECONDARY {
+//   .FA_ANIMATED_SPINNER {
+//     .getFaIcon('spinner');
+//     .fa-anim('spin', 'FA_ANIMATE_SPINNER');
+//   }
+// }
+// .EXAMPLE_BUTTON_DANGER {
+//   .FA_ICON_SYNC {
+//     .getFaIcon('sync');
+//     .fa-anim('spin', 'SYNC_ICON_ANIM');
+//   }
+//   .LOADING_WIDGET_HERE {
+//     .loading('Wait for synchronizing to complete', @white);
+//   }
+// }
+// .EXAMPLE_BUTTON_CUBE {
+//   .button();
+//   .MY_SUGAR_LOGO {
+//     .sugar-cube('default');
+//   }
+//   .FONT_AWESOME_SPIN {
+//     .fa-anim('spin', 'FA_ANIMATE_SUGAR_CUBE');
+//   }
+//   svg {
+//     height: 10px;
+//   }
+// }
+//
+// Weight: 13
+//
+// Styleguide Forms.Button.Misc

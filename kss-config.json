@@ -5,12 +5,21 @@
     ],
     "destination": "dist/",
     "mask": "*.less",
+    "builder": "custom-builder",
+    "custom": [
+        "Icons",
+        "colorvars",
+        "CssClasses",
+        "MyModifier",
+        "democssclasses"
+    ],
+    "extend": "./kss/helpers",
     "homepage": "index.md",
     "css": [
-        "../src/config.css"
+        "kss-assets/styles.css"
     ],
     "js": [
-        "../src/styleguide.js"
+        "kss-assets/styleguide.js"
     ],
     "verbose": true
 }

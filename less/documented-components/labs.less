@@ -1,0 +1,197 @@
+// Avatar
+//
+// <span class="work-in-progress">WORK IN PROGRESS</span>
+//
+// Markup:
+// <a href="#"><span class="MY_AVATAR_AVATAR"></span></a>
+//
+// ```
+// .MY_AVATAR_AVATAR {
+//   .avatar();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .MY_AVATAR_AVATAR {
+//   .avatar();
+// }
+//
+// Weight: 0
+//
+// Styleguide Labs.Avatar
+
+.avatar() {
+    height: 26px;
+    width: 26px;
+
+    &:after {
+        @a: 'data:image/png;base64,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';
+        background: url(@a) no-repeat;
+        background-position: center;
+        background-size: 34px 38px;
+        display: inline-block;
+        border-radius: 50%;
+        height: inherit;
+        width: inherit;
+        content: "";
+    }
+}
+
+// Slashed icons
+//
+// <span class="work-in-progress">WORK IN PROGRESS</span> Note: slashed icons automatically import font awesome `.fa-fw` ruleset for fixed width.
+//
+// Mockup: <img src="https://i.imgur.com/54PDwJ6.png">
+//
+// Markup:
+// <div class="display-flex">
+//     <i class="FACEBOOK_ICON_SLASHED"></i>
+//     <i class="ALT_ARROWS_ICON_SLASHED"></i>
+// </div>
+//
+// ```
+// .ALT_ARROWS_ICON_SLASHED {
+//   .getFaIcon('arrows-alt');
+//   .fa-3x;
+//   .fa-slashed();
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .ALT_ARROWS_ICON_SLASHED {
+//   .getFaIcon('arrows-alt');
+//   .fa-3x;
+//   .fa-slashed();
+// }
+//
+// Weight: 1
+//
+// Styleguide Labs.SlashedIcons
+
+.fa-slashed() {
+    position: relative;
+    .fa-fw;
+  
+    &:after {
+      font-size: 1.25em;
+      content: "x";
+      width: 1em;
+      height: 0.3em;
+      overflow: hidden;
+      display: inline-block;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: .18em;
+      left: -0.061em;
+  
+      // Character `#` is reserved in URL must encode as %23 for the URL to be valid
+      @slashed_fill: '%23555';
+      @slashed_shadow: '%23fff';
+  
+      .slashed_1 {
+        stroke: @slashed_fill;
+        zoom: 10;
+      }
+  
+      @slash: '<svg xmlns="http://www.w3.org/2000/svg"> <line x1="0" y1="10" x2="100" y2="10" stroke="@{slashed_shadow}" stroke-width="2" /> <line x1="0" y1="11" x2="100" y2="11" stroke="@{slashed_fill}" stroke-width="2" /> <line x1="0" y1="12" x2="100" y2="12" stroke="@{slashed_shadow}" /> </svg>';
+      background: url('data:image/svg+xml;utf8,@{slash}') no-repeat;
+    }
+  }
+
+// Loading widget/alert
+//
+// Markup:
+// <section class="display-flex">
+//     <div class="MY_LOADING_ALERT"><!--
+//         --><i></i><i></i><i></i>
+//     </div>
+//     <div class="MY_DANGER_ALERT"><!--
+//         --><i></i><i></i><i></i>
+//     </div>
+//     <div class="MY_WAIT_ALERT"><!--
+//         --><i></i><i></i><i></i>
+//     </div>
+// </section>
+//
+// ```
+// .MY_LOADING_ALERT {
+//   .loading(); // default mode, color is @black and label is "Loading"
+// }
+//
+// .MY_DANGER_ALERT {
+//   .loading('Warning: wait for operation to complete'; @red);
+// }
+//
+// .MY_WAIT_ALERT {
+//   .button-danger();
+//   .loading('Wait for the app to sync'; @white);
+// }
+// ```
+//
+// democssclasses: true
+//
+// cssclasses:
+// .MY_LOADING_ALERT {
+//   .loading(); // default mode, color is @black and label is "Loading"
+// }
+// .MY_DANGER_ALERT {
+//   .loading('Warning: wait for operation to complete'; @red);
+// }
+// .MY_WAIT_ALERT {
+//   .button-danger();
+//   .button-disabled();
+//   .loading('Wait for the app to sync'; @white);
+// }
+//
+// Weight: 10
+//
+// Styleguide Labs.LoadingWidget
+
+.loading(@label: "Loading"; @color: @black) {
+    display: inline-block;
+    color: @color;
+
+    &:before {
+        content: @label;
+    }
+
+    i {
+        color: @color;
+        display: inline-block;
+        margin: 0 1px 0 0;
+        font-family: serif;
+        font-weight: 900;
+        font-style: normal;
+        animation: move 1s infinite linear;
+
+        &:before {
+            content: ".";
+            position: relative;
+        }
+
+        &:nth-child(1) {
+            animation-delay: .1s;
+        }
+            
+        &:nth-child(2) {
+            animation-delay: .2s;
+        }
+        
+        &:nth-child(3) {
+            animation-delay: .3s;
+        }
+    }
+
+    @keyframes move {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity:0.1;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+<section class="MY_NAVBAR_VERTICAL_WRAPPER display-flex">
+    <ul class="MY_NAVBAR_VERTICAL">
+        <li>
+            <a><span class="MY_BRAND"></span></a>
+        </li>
+        <li>
+            <a>Menu 1</a>
+            </li>
+        <li class="current">
+            <a>Selected Menu 2</a>
+        </li>
+        <li>
+            <a>Very long text appears on menu item number 3</a>
+        </li>
+        <li></li><!-- intentionally empty element is a self-growing spacer in navbar -->
+        <li>
+            <a><span class="MY_USER_AVATAR"></span> James</a>
+        </li>
+    </ul>
+
+    <div class="MY_NAVBAR_VERTICAL_WITH_ICONS">
+        <span class="menu menu-item-10">
+            <a><span class="MY_BRAND"></span></a> <a onclick="toggleClass(`menu-item-10`, `SUBMENU_OPEN`)"><i class="CARET_DOWN"></i></a>
+        </span>
+        <div class="SUBMENU">
+            <span><a>Group 1 Submenu 1</a></span>
+            <span><a>Group 1 Submenu 2</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Group 2 Submenu 3</a></span>
+            <span><a>Group 2 Submenu 4</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Veeeeeeeeeeery looooooongg meeeenuuuu itemmmmmmmmmmmm</a></span>
+        </div>
+        <span class="menu menu-item-11">
+            <a><i class="ICON_GITHUB"></i> Menu 1</a> <a onclick="toggleClass(`menu-item-11`, `SUBMENU_OPEN`)"><i class="CARET_DOWN"></i></a>
+        </span>
+        <div class="SUBMENU">
+            <span><a>Group 1 Submenu 1</a></span>
+            <span><a>Group 1 Submenu 2</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Group 2 Submenu 3</a></span>
+            <span><a>Group 2 Submenu 4</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Veeeeeeeeeeery looooooongg meeeenuuuu itemmmmmmmmmmmm</a></span>
+        </div>
+        <span class="menu menu-item-12 active">
+            <a><i class="ICON_CAR"></i> Selected Menu 2</a> <a onclick="toggleClass(`menu-item-12`, `SUBMENU_OPEN`)"><i class="CARET_DOWN"></i></a>
+        </span>
+        <div class="SUBMENU">
+            <span><a>Group 1 Submenu 1</a></span>
+            <span><a>Group 1 Submenu 2</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Group 2 Submenu 3</a></span>
+            <span><a>Group 2 Submenu 4</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Veeeeeeeeeeery looooooongg meeeenuuuu itemmmmmmmmmmmm</a></span>
+        </div>
+        <span class="menu menu-item-13">
+            <a><i class="ICON_CANNABIS"></i> Very long text appears on menu item number 3</a> <a onclick="toggleClass(`menu-item-13`, `SUBMENU_OPEN`)"><i class="CARET_DOWN"></i></a>
+        </span>
+        <div class="SUBMENU">
+            <span><a>Group 1 Submenu 1</a></span>
+            <span><a>Group 1 Submenu 2</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Group 2 Submenu 3</a></span>
+            <span><a>Group 2 Submenu 4</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Veeeeeeeeeeery looooooongg meeeenuuuu itemmmmmmmmmmmm</a></span>
+        </div>
+        <span class="menu menu-item-14"></span><!-- intentionally empty element is a self-growing spacer in navbar -->
+        <span class="menu menu-item-15">
+            <a><span class="MY_USER_AVATAR"></span> James</a> <a onclick="toggleClass(`menu-item-15`, `SUBMENU_OPEN`)"><i class="CARET_DOWN"></i></a>
+        </span>
+        <div class="SUBMENU">
+            <span><a>Group 1 Submenu 1</a></span>
+            <span><a>Group 1 Submenu 2</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Group 2 Submenu 3</a></span>
+            <span><a>Group 2 Submenu 4</a></span>
+            <span class="DIVIDER"></span>
+            <span><a>Veeeeeeeeeeery looooooongg meeeenuuuu itemmmmmmmmmmmm</a></span>
+        </div>
+    </div>
+
+    <nav class="MY_NAVBAR_VERTICAL_WITH_CLASS_NAMES">
+        <span class="navigation-item">
+            <span class="navigation-item-link" href="#"><span class="MY_BRAND"></span></span>
+        </span>
+        <span class="navigation-item">
+            <span class="navigation-item-link" href="#">Menu 1</span>
+        </span>
+        <span class="navigation-item active">
+            <span class="navigation-item-link" href="#">Selected Menu 2</span>
+        </span>
+        <span class="navigation-item"></span><!-- intentionally empty element is a self-growing spacer in navbar -->
+        <span class="navigation-item">
+            <span class="navigation-item-link" href="#"><span class="MY_USER_AVATAR"></span> James</span>
+        </span>
+    </nav>
+</section>
